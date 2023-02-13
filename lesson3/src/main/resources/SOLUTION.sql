@@ -1,0 +1,2 @@
+
+ALTER TABLE student MODIFY COLUMN birthday DATE NOT NULL;
