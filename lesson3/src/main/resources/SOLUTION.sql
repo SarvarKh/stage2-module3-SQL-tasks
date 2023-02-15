@@ -1,9 +1,9 @@
 ALTER TABLE student ALTER COLUMN birthday SET NOT NULL;
 
-ALTER TABLE mark ADD CHECK (makr >= 1 AND mark <= 10);
+ALTER TABLE Mark ADD CONSTRAINT mark_in_range_1_through_10 CHECK (mark >= 1 AND mark <= 10);
 ALTER TABLE mark ALTER COLUMN subject_id SET NOT NULL;
 
-ALTER TABLE subject ADD CHECK (grade >= 1 AND grade <= 5);
+ALTER TABLE Subject ADD CONSTRAINT grade_in_range_1_through_5 CHECK (grade >= 0 AND grade <= 5);
 
 ALTER TABLE paymenttype ADD UNIQUE (name);
 
