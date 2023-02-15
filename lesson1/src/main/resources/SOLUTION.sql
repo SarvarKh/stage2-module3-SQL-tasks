@@ -1,9 +1,9 @@
-CREATE TABLE Student (ID bigint, Name varchar(30), Birthday date, Group int, PRIMARY KEY (ID));
+CREATE TABLE Student (id BIGINT PRIMARY KEY, name VARCHAR(45), birthday DATE, groupnumber INT);
 
-CREATE TABLE Subject (ID bigint, Name varchar(30), Description varchar(30), Grade int, PRIMARY KEY (ID));
+CREATE TABLE Subject (id BIGINT PRIMARY KEY, name VARCHAR(255), description VARCHAR(255), grade INT);
 
-CREATE TABLE PaymentType (ID bigint, Name varchar(30), PRIMARY KEY (ID));
+CREATE TABLE PaymentType (id BIGINT PRIMARY KEY, name VARCHAR(30));
 
-CREATE TABLE Payment (ID bigint, Type_ID bigint, Amount decimal, Student_ID bigint, Payment_date datetime, PRIMARY KEY (ID), FOREIGN KEY (Type_ID) REFERENCES PaymentType(ID), FOREIGN KEY (Student_ID) REFERENCES Student(ID));
+CREATE TABLE Payment (id BIGINT PRIMARY KEY, type_id BIGINT REFERENCES PaymentType(id), amount DECIMAL, student_id BIGINT REFERENCES Student(id), payment_date TIMESTAMP);
 
-CREATE TABLE Mark (ID bigint, Student_ID bigint, Subject_ID bigint, Mark int, FOREIGN KEY (Student_ID) REFERENCES Student(ID), FOREIGN KEY (Subject_ID) REFERENCES Subject(ID));
+CREATE TABLE Mark (id BIGINT PRIMARY KEY, student_id BIGINT REFERENCES Student(id), subject_id BIGINT REFERENCES Subject(id), mark INT);
