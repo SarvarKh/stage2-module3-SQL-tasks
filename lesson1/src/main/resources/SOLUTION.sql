@@ -1,8 +1,3 @@
-
-
-# CREATE DATABASE University;
-# USE University;
-
 CREATE TABLE Student (ID bigint, Name varchar(30), Birthday date, Group int, PRIMARY KEY (ID));
 
 CREATE TABLE Subject (ID bigint, Name varchar(30), Description varchar(30), Grade int, PRIMARY KEY (ID));

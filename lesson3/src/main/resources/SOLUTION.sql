@@ -1,5 +1,3 @@
-
--- ALTER TABLE student MODIFY COLUMN birthday DATE NOT NULL;
 ALTER TABLE student ALTER COLUMN birthday SET NOT NULL;
 
 ALTER TABLE mark ADD CHECK (makr >= 1 AND mark <= 10);
